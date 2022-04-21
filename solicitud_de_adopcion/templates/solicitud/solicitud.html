@@ -1,0 +1,82 @@
+{% extends "proyectorefugio/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<br>
+<h1 style="text-align: center; color: white;" >
+    Formulario de adopcion
+</h1>
+
+{% if "valido" in request.GET %}
+
+<section class="page-section cta">
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-9 mx-auto">
+          <div class="cta-inner text-center rounded">
+            <h2 class="section-heading mb-4">
+              <span class="section-heading-lower">Gracias por llenar el formulario</span>
+            </h2>
+            <p class="mb-0"> La solicitud ha sido enviada de forma exitosa, pronto nos estaremos comunicando para brindarle mayor información.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+{% endif %}
+
+<section class="page-section cta">
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-9 mx-auto">
+          <div class="cta-inner text-center rounded">
+            <h2 class="section-heading mb-4">
+              <span class="section-heading-lower">Adoptar es un gran paso</span>
+            </h2>
+            <p class="mb-0"> Hay muchos aspectos que debes considerar previamente, desde elegir el tipo de mascota más adecuada para tu estilo de vida, 
+                            hasta decidir dónde o con quién adoptar. Por eso queremos ayudarte para que ésta sea una de las mejores experiencias en tu vida y la de tu próximo 
+                            amigo. Ante todo, debes tomar en cuenta la gran responsabilidad que representa tener a un animal de compañía dentro de tu vida, 
+                            ya que desafortunadamente es común que algunos dueños que adquieren un cachorro o un gatito u otro tipo de mascotas de forma impulsiva decidan abandonarlo. Esto sucede
+                             por lo regular cuando se dan cuenta del compromiso a largo plazo que implica vivir con una mascota.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<section class="page-section clearfix">
+    <div class="container">
+      <div class="intro">
+        <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="{% static 'proyectorefugio/img/adopame.jpg' %}" alt="">
+        <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+          <h2 class="section-heading mb-4" >
+            <span class="section-heading-lower ">Formulario</span>
+            <span class="section-heading-upper">
+
+
+
+
+                <form action="" method="POST" style="text-align: center;">
+                    {% csrf_token %}      
+                    <table style="color: white; margin: 20px auto;">
+                        {{miformulario.as_table}}
+                    </table>
+                    <input type="submit" value="Enviar" style="width: 150px;">
+                </form>        
+            </span>
+          </h2>
+         
+        </div>
+      </div>
+    </div>
+  </section>
+<br>
+<br>
+<br>
+<br>
+
+
+{% endblock %}

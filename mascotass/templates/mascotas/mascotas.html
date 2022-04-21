@@ -1,0 +1,36 @@
+{% extends "proyectorefugio/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+ {% for mascota in mascotas %}
+
+ <section class="page-section clearfix">
+    <div class="container">
+      <div class="intro">
+        <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="{{mascota.fotografia.url}}" alt="" style="width: 50%;">
+        <div class="intro-text left-0 text-left bg-faded p-5 rounded">
+          <h2 class="section-heading mb-4" >
+            <span class="section-heading-lower text-center">{{mascota.nombre}} </span>
+            
+            <span class="section-heading-upper"> * Edad: &nbsp; &nbsp;   {{mascota.edad}}</span>
+            <span class="section-heading-upper"> * Genero: &nbsp; &nbsp;  {{mascota.genero}}</span>
+            <span class="section-heading-upper"> * Fecha de rescate: &nbsp; &nbsp;  {{mascota.fecha_de_rescate}} </span>
+            <span class="section-heading-upper"> * Estado: &nbsp; &nbsp;  {{mascota.estado}} </span>
+            <span class="section-heading-upper"> * Raza: &nbsp; &nbsp;  {{mascota.raza}} </span>
+            <span class="section-heading-upper"> * Enfermedad: &nbsp; &nbsp;  {{mascota.enfermedad}} </span>
+
+          </h2>
+
+         
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+    {% endfor %}
+
+{% endblock %}
