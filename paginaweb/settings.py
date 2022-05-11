@@ -86,13 +86,24 @@ WSGI_APPLICATION = 'paginaweb.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-DATABASES = {
+"""DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'baserefugio',
         'USER': 'postgres',
         'PASSWORD': '12345abc',
         'HOST': 'localhost',
+        'DATABASE_PORT': '5432',
+    }
+}"""
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'baserefugio',
+        'USER': 'root',
+        'PASSWORD': '1234abcd',
+        'HOST': 'db',
         'DATABASE_PORT': '5432',
     }
 }
